@@ -27,7 +27,6 @@ int main()
 	double start_time = omp_get_wtime();
 
     #pragma omp parallel for
-    {
 		for(int i = 0; i < n; i++)
 		{
 			vo[i] = 0;
@@ -36,7 +35,6 @@ int main()
 					vo[i] += m[i][j] * vi[j];
 				}	
 		}  	
-    }
     	double end_time = omp_get_wtime();
 	double result_time = (end_time - start_time);
 
