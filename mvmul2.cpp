@@ -2,7 +2,7 @@
 #include<omp.h>
 #include<time.h>
 using namespace std;
-#define n 1000
+#define n 1445
 
 int main()
 {
