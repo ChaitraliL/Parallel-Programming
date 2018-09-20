@@ -1,7 +1,7 @@
 #include<iostream>
 #include<omp.h>
 using namespace std;
-#define n 1000
+#define n 1445
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
 		}	
 	}
 
-	double start_time = omp_get_wtime();
+	double start_time = omp_get_wtime(); //omp function doesn't make difference in serial but it does in parallel
 	for(int i = 0; i < n; i++)
 	{
 		for(int j = 0; j < n; j++)
