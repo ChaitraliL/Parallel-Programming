@@ -26,9 +26,8 @@ int main()
 		
 	double start_time = omp_get_wtime();
 
-    #pragma omp parallel
+    #pragma omp parallel for
     {
-    	#pragma omp for 
 		for(int i = 0; i < n; i++)
 		{
 			vo[i] = 0;
