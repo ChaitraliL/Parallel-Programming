@@ -1,21 +1,29 @@
 #include<iostream>
-#include<time.h>
+#include<omp.h>
 using namespace std;
 #define n 100000 
 
 int main()
 {
-	double start_time = clock();
 	int a[n],b[n],c[n];
+	
 	for(int i = 0; i < n; i++)
 	{
 		a[i] = 1;
 		b[i] = 2;
-		c[i] = a[i] + b[i]; 
+	}
+	double start_time = omp_get_wtime();
+	for(int i = 0; i < n; i++)
+	{
+		c[i] = a[i] + b[i]; 	
+	} 
+	double end_time = omp_get_wtime();
+	for(int i = 0; i < n; i++)
+	{
 		cout<<c[i]<<" ";	
 	} 
-	double end_time = clock();
-	double result_time = (end_time - start_time) / CLOCKS_PER_SEC;
+	double result_time = (end_time - start_time);
 	cout<<"\n"<<result_time;
 	return 0;
 }
+//0.00119712
